@@ -1,0 +1,2 @@
+allow platform_app_36 app_data_file file execute
+allow platform_app_36 vendor_audio_prop file { getattr open read map }
