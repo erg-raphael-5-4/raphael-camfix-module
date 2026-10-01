@@ -1,2 +1,4 @@
 # Return HFR video buffers per frame (240 fps recording deadlock)
 ro.vendor.camera.hfr.batch_video_buffers=false
+# Advertise a 60 fps high speed preview so HFR batches match the HAL's batch_size_max
+ro.vendor.camera.hfr.preview_fps=60
