@@ -23,3 +23,9 @@ printf 'malloc mpbase_shim_malloc\nrealloc mpbase_shim_realloc\n' > /tmp/mpbase_
 "$PE" --rename-dynamic-symbols /tmp/mpbase_syms.$$ "$V/libmpbase.so"
 "$PE" --add-needed libmpbase_shim.so "$V/libmpbase.so"
 rm -f /tmp/mpbase_syms.$$
+
+# Morpho panorama: stubs for the two JNI methods the gp3 build lacks
+A=module/system/priv-app/MiuiCamera/lib/arm64
+shlib src/morpho_panorama_compat.c libmorpho_panorama_compat.so "$A/libmorpho_panorama_compat.so"
+"$PE" --print-needed "$A/libmorpho_panorama_gp3.so" | grep -qx libmorpho_panorama_compat.so || \
+    "$PE" --add-needed libmorpho_panorama_compat.so "$A/libmorpho_panorama_gp3.so"
