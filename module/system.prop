@@ -1,0 +1,2 @@
+# Return HFR video buffers per frame (240 fps recording deadlock)
+ro.vendor.camera.hfr.batch_video_buffers=false
