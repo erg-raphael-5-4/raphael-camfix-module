@@ -1,6 +1,6 @@
 id=raphael_camfix_test
 name=Raphael MIUI Camera fix (test)
-version=v3
-versionCode=3
+version=v4
+versionCode=4
 author=ergdevops
 description=Test overlay for the Leica 5.0 port MIUI Camera on raphael (DerpFest 17). Needs a metamodule (meta-overlayfs).
