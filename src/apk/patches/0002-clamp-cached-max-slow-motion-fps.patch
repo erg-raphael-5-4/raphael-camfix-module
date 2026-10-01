@@ -1,0 +1,29 @@
+--- a/smali_classes7/com/mi/config/DataItemFeature.smali	2026-10-01 22:03:38.781591770 +0530
++++ b/smali_classes7/com/mi/config/DataItemFeature.smali	2026-10-01 22:03:38.837856492 +0530
+@@ -14134,7 +14134,7 @@
+ .end method
+ 
+ .method public e1()S
+-    .locals 2
++    .locals 3
+ 
+     invoke-static {}, Lmodify/UniversalSettings;->isUniversalSettings()Z
+ 
+@@ -14156,6 +14156,17 @@
+ 
+     move-result v1
+ 
++    iget-object v2, p0, Lcom/mi/config/DataItemFeature;->A:Lcom/mi/device/Common;
++
++    invoke-virtual {v2}, Lcom/mi/device/Common;->getRearMaxFPS()S
++
++    move-result v2
++
++    if-le v1, v2, :camfix_cached_ok
++
++    move v1, v2
++
++    :camfix_cached_ok
+     return v1
+ 
+     :cond_0
